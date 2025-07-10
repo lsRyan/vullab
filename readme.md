@@ -104,12 +104,12 @@ VulLab requires several `pip` libraries to work. The installation steps should a
 There are no relevant safety and security concerns in regard to the installation and usage of VulLab.
 
 ## Installation
-You can download a Virtual Machine (~20Gb) that already has VulLab and all its dependencies installed by clicking the button below. It is the same one used in the [Demo](#demo-in-portuguese)! The provided VM also includes everything necessary to conduct all tests and experiments described in the [Test and Experiments](#test-and-experiments) section. We recommend trying this option before opting for the manual installation.
+You can download a Virtual Machine (~20Gb) that already has VulLab and all its dependencies installed by clicking the button below. Download is only possible trough a chrome-based browser or with MEGA desktop app! It is the same one used in the [Demo](#demo-in-portuguese)! The provided VM also includes everything necessary to conduct all tests and experiments described in the [Test and Experiments](#test-and-experiments) section. We recommend trying this option before opting for the manual installation.
 
 [![Button]][VM_Link]
 
 [Button]: https://img.shields.io/badge/Download_VM-37a779?style=for-the-badge
-[VM_Link]: https://1drv.ms/u/c/b52313abe04135e0/ET5c3gcTG4NEl6h0gsAlGkoB9VpN-JxyoBpQc2eQWEa8mw
+[VM_Link]: https://mega.nz/file/LIMUwKZb#8mkzGiv7sLjxYulptDtQSrTrn-HVImqAZut2A73eZlM
 
 For manually installing VUlLab we offer two alternatives: one requiring `miniconda`, a free environment managing tool, and another which only requires a system with `python`.
 
