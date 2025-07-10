@@ -4,20 +4,9 @@
 
 We present VulLab, a validation framework for vulnerability detection tools with support to Solidity source code. Our application enables users to add vulnerabilities to a collection of smart contracts, extract their respective labels and readily use them as a benchmark for several bug detector. This repository is related to the paper "*Building a Labeled Smart Contract Dataset for Evaluating Vulnerability Detection Tools’ Effectiveness*", currently under evaluation for publishing in SBSeg2025's Tools Session (Salão de Ferramentas). The work's abstract goes as follows:
 
-*In recent years, surveys on vulnerability detection tools for Solidity-
-based smart contracts have shown that many of them display poor capabilities.
-One of the causes for such deficiencies is the absence of quality benchmarking
-datasets, where bugs typically found in smart contracts are present in quan-
-tity and accurately labeled. VulLab’s main aim is to help tackle this issue as
-a framework that incorporates both, state-of-the-art vulnerability insertion and
-vulnerability detection tools. Such capabilities empower users to seamlessly ge-
-nerate benchmark capable datasets from collected contracts and employ them
-to validate novel analysis tool and obtain an accurate comparison with current
-state-of-the-art solutions. The framework was able to, from 50 smart contracts
-collected from the Ethereum mainnet, generate an annotated dataset with 384
-entries which included 20 unique vulnerabilities, and use them to compare 14
-analysis tools in approximately 24 hours. VulLab is open-source and is availa-
-ble at https://github.com/lsRyan/vullab.git.*
+*In recent years, surveys on vulnerability detection tools for
+Solidity-based smart contracts have shown that many of them display poor
+capabilities. One of the causes for such deficiencies is the absence of quality benchmarking datasets, where bugs typically found in smart contracts are present in quantity and accurately labeled. VulLab’s main aim is to help tackle this issue as a framework that incorporates both, state-of-the-art vulnerability insertion and vulnerability detection tools. Such capabilities empower users to seamlessly generate benchmark capable datasets from collected contracts and employ them to validate novel analysis tool and obtain an accurate comparison with current state-of-the-art solutions. The framework was able to, from 50 smart contracts collected from the Ethereum mainnet, generate an annotated dataset more than 300 entries which included 20 unique vulnerabilities, and use them to compare 14 analysis tools in approximately 24 hours. VulLab is open-source and is available at https://github.com/lsRyan/vullab.git.*
 
 ## Table of contents
 - [VulLab](#vullab)
@@ -34,6 +23,7 @@ ble at https://github.com/lsRyan/vullab.git.*
     - [Command line interface](#command-line-interface)
     - [Options](#options)
   - [Test and Experiments](#test-and-experiments)
+    - [Before running the experiments](#before-running-the-experiments)
     - [Smoke test (Minimum test)](#smoke-test-minimum-test)
     - [Reduced Experiment](#reduced-experiment)
       - [Claim 1](#claim-1)
@@ -116,9 +106,10 @@ There are no relevant safety and security concerns in regard to the installation
 ## Installation
 You can download a Virtual Machine (~70Gb) that already has VulLab and all its dependencies installed by clicking the button below. It is the same one used in the [Demo](#demo-in-portuguese)! The provided VM also includes everything necessary to conduct all tests and experiments described in the [Test and Experiments](#test-and-experiments) section. We recommend trying this option before opting for the manual installation.
 
-![Button]
+[![Button]][VM_Link]
 
 [Button]: https://img.shields.io/badge/Download_VM-37a779?style=for-the-badge
+[VM_Link]: https://1drv.ms/u/c/b52313abe04135e0/EZSJDVFYoShJoiYb9D2qC98BEHNOBcKp-5lM5g0ZM6Amew?e=VW3Gnh
 
 For manually installing VUlLab we offer two alternatives: one requiring `miniconda`, a free environment managing tool, and another which only requires a system with `python`.
 
@@ -207,6 +198,14 @@ To evaluate the primary functionalities of Vullab and replicate findings from ou
 The `raw_dataset_50` consists of fifty smart contracts, carefully curated from the raw dataset which utilized for obtaining `baked_dataset_complete_experiment`. Its main aim is to enable the user to observe all supported vulnerabilities for insertion, that is, they enable the insertion of at least one example of each of the 20 supported bugs. In contrast, `raw_dataset_5` is a subset containing only five entries, enabling a rapid "smoke test" to verify VulLab's core functionalities.
 
 **Disclaimer**: It is important to note that large language models (LLMs) inherently exhibit probabilistic behavior, which may lead to variability in GPT-based results across different executions. Vullab’s GPT-based detection mechanism employs a manually crafted system prompt that explicitly outlines detection procedures and output instructions. No additional optimization steps were implemented to enhance consistency between model calls.
+
+### Before running the experiments
+
+- **If you are using the provided VM**, note that you will find VulLab's installation in `home/Documents`. Hence, you should follow the steps presented in the test and experiments below in that location. The `vullab` directory in the Desktop contain the **results obtained in the demo**. Importantly, if you get any error related to disk space (which should not happen) you can safely delete the Desktop directory.
+
+- If you intend to use the GPT-analyzer, you should add your OpenAI API key in the .zrsh file present in `\home`. You can also only execute `SmartBugs2` you can omit `-g  <model>` from the commands.
+
+- We strongly recommend watch the [demo](#demo-in-portuguese) before executing, as it presents a step-by-step execution of the [reduced experiment](#reduced-experiment).
 
 ### Smoke test (Minimum test)
 
