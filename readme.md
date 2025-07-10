@@ -104,7 +104,7 @@ VulLab requires several `pip` libraries to work. The installation steps should a
 There are no relevant safety and security concerns in regard to the installation and usage of VulLab.
 
 ## Installation
-You can download a Virtual Machine (~70Gb) that already has VulLab and all its dependencies installed by clicking the button below. It is the same one used in the [Demo](#demo-in-portuguese)! The provided VM also includes everything necessary to conduct all tests and experiments described in the [Test and Experiments](#test-and-experiments) section. We recommend trying this option before opting for the manual installation.
+You can download a Virtual Machine (~20Gb) that already has VulLab and all its dependencies installed by clicking the button below. It is the same one used in the [Demo](#demo-in-portuguese)! The provided VM also includes everything necessary to conduct all tests and experiments described in the [Test and Experiments](#test-and-experiments) section. We recommend trying this option before opting for the manual installation.
 
 [![Button]][VM_Link]
 
