@@ -17,7 +17,7 @@ state-of-the-art solutions. The framework was able to, from 50 smart contracts
 collected from the Ethereum mainnet, generate an annotated dataset with 384
 entries which included 20 unique vulnerabilities, and use them to compare 14
 analysis tools in approximately 24 hours. VulLab is open-source and is availa-
-ble at.*
+ble at https://github.com/lsRyan/vullab.git.*
 
 ## Table of contents
 - [VulLab](#vullab)
@@ -125,7 +125,7 @@ For manually installing VUlLab we offer two alternatives: one requiring `minicon
 Regardless of the installation method, the first step is to clone this repository. To achieve that execute the following line in the directory you wish VulLab to be located
 
 ```
-git clone https://github.com/7e095ac7d0/vullab.git
+git clone https://github.com/lsRyan/vullab.git
 ```
 
 Then enter VulLab's working directory by executing
@@ -141,7 +141,7 @@ This alternative utilizes the provided environment provided in file `vullab_env.
 conda env create --file vullab_env.yml
 ```
 
-To access the newly created enviornment just type
+To access the newly created environment just type
 
 ```
 conda activate vullab
