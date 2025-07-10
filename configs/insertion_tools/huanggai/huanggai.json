@@ -1,0 +1,35 @@
+{
+    "name": "huanggai",
+    "image": "xf15850673022/huanggai:1.0",
+    "vulnerabilities": [
+        "contractAffectedByMiners",
+        "DosByComplexFallback",
+        "forcedToReceiveEthers",
+        "hashWithMulVarLenArg",
+        "integerOverflow",
+        "lockedEther",
+        "NonpublicVarAccessdByPublicFunc",
+        "nonStandarNaming",
+        "preSentEther",
+        "publicFuncToExternal",
+        "reentrancy",
+        "shortAddressAttack",
+        "specifyFuncVarAnyType",
+        "suicideContract",
+        "transactionOrderDependancy",
+        "txOriginForAuthentication",
+        "unhandledException",
+        "uninitializedLocalVariables",
+        "unlimitedCompilerVersions",
+        "wastefulContracts"
+    ],
+    "contracts_src": "/root/HuangGai/contractSpider/contractCodeGetter/sourceCode",
+    "output_dir": "/root/HuangGai/securityAbandonerAndInjector",
+    "volumes": [
+        "ROOT_DIR/configs/huanggai/threads/VULNERABILITY_NAME/userNeeds.json:/root/HuangGai/userNeeds.json",
+        "ROOT_DIR/configs/huanggai/reentrancy_fix/judgePath.py:/root/HuangGai/contractExtractor/reentrancyExtractor/judgePath.py"
+    ],
+    "execution_cmd": [
+      "/bin/bash", "-c", "ln -s /usr/bin/python3 /usr/bin/python && python3 main.py"
+    ]
+  }

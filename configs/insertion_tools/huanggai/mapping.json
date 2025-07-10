@@ -1,0 +1,22 @@
+{
+	"contractAffectedByMiners": "(SCWE-031) Insecure use of Block Variables",
+	"hashWithMulVarLenArg": "(SCWE-074) Hash Collisions with Multiple Variable Length Arguments",
+	"integerOverflow": "(SCWE-047) Integer Overflows and Underflows",
+	"txOriginForAuthentication": "(SCWE-018) Use of tx.origin for Authorization",
+	"reentrancy": "(SCWE-046) Reentrancy Attacks",
+	"unlimitedCompilerVersions": "(SCWE-060) Floating Pragma",
+	"suicideContract": "(SCWE-050) Unprotected SELFDESTRUCT Instruction",
+	"transactionOrderDependancy": "(SCWE-052) Transaction Order Dependence",
+	"unhandledException": "(SCWE-004) Uncaught Exceptions",
+	"DosByComplexFallback": "(SCWE-058) DoS with Block Gas Limit",
+	"specifyFuncVarAnyType": "(SCWE-039) Insecure Use of Inline Assembly",
+	"uninitializedLocalVariables": "(SCWE-083) Failure to Handle Edge Cases",
+	"wastefulContracts": "(SCWE-049) Unprotected Ether Withdrawal",
+	"lockedEther": "(SCWEX-001) Absence of Ether Transfer Functions",
+	"shortAddressAttack": "(SCWEX-002) Lack of Address Input Validation",
+	"publicFuncToExternal": "(SCWEX-003) Inadequate Function Visibility",
+	"nonStandarNaming": "(SCWEX-004) Inadequate Naming Convention",
+	"preSentEther": "(SCWEX-005) Use of address(this).balance in Comparison Statements",
+	"forcedToReceiveEthers": "(SCWEX-005) Use of address(this).balance in Comparison Statements",
+	"NonpublicVarAccessdByPublicFunc": "(SCWEX-006) Public Access to non-Public Variables"
+}

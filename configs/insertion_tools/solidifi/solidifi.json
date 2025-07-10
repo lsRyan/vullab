@@ -1,0 +1,19 @@
+{
+    "name": "solidifi",
+    "image": "asemg/solidifi:v1",
+    "vulnerabilities": [
+      "Re-entrancy",
+      "Timestamp-Dependency",
+      "Unchecked-Send",
+      "Unhandled-Exceptions",
+      "TOD",
+      "Overflow-Underflow",
+      "tx.origin"
+    ],
+    "contracts_src": "/solidifi/SCs",
+    "output_dir": "/solidifi/buggy",
+    "volumes": [],
+    "execution_cmd": [
+      "/bin/bash", "-c", "find SCs -iname '*.sol' -exec python3 solidifi.py -i {} VULNERABILITY_NAME \\;"
+    ]
+  }

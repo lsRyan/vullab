@@ -1,0 +1,9 @@
+{
+	"Overflow-Underflow": "(SCWE-047) Integer Overflows and Underflows",
+	"Re-entrancy": "(SCWE-046) Reentrancy Attacks",   
+	"TOD": "(SCWE-052) Transaction Order Dependence",
+	"tx.origin": "(SCWE-018) Use of tx.origin for Authorization",
+	"Timestamp-Dependency": "(SCWE-031) Insecure use of Block Variables",
+	"Unchecked-Send": "(SCWE-079) Insecure Use of Transfer and Send",
+	"Unhandled-Exceptions": "(SCWE-004) Uncaught Exceptions"
+}

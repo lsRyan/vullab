@@ -1,0 +1,82 @@
+{
+    "contractAffectedByMiners": [
+        0,
+        0
+    ],
+    "DosByComplexFallback": [
+        0,
+        0
+    ],
+    "forcedToReceiveEthers": [
+        0,
+        0
+    ],
+    "hashWithMulVarLenArg": [
+        0,
+        0
+    ],
+    "integerOverflow": [
+        0,
+        0
+    ],
+    "lockedEther": [
+        0,
+        0
+    ],
+    "NonpublicVarAccessdByPublicFunc": [
+        0,
+        0
+    ],
+    "nonStandarNaming": [
+        0,
+        0
+    ],
+    "preSentEther": [
+        0,
+        0
+    ],
+    "publicFuncToExternal": [
+        0,
+        0
+    ],
+    "reentrancy": [
+        0,
+        0
+    ],
+    "shortAddressAttack": [
+        0,
+        0
+    ],
+    "specifyFuncVarAnyType": [
+        1,
+        0.2
+    ],
+    "suicideContract": [
+        0,
+        0
+    ],
+    "transactionOrderDependancy": [
+        0,
+        0
+    ],
+    "txOriginForAuthentication": [
+        0,
+        0
+    ],
+    "unhandledException": [
+        0,
+        0
+    ],
+    "uninitializedLocalVariables": [
+        0,
+        0
+    ],
+    "unlimitedCompilerVersions": [
+        0,
+        0
+    ],
+    "wastefulContracts": [
+        0,
+        0
+    ]
+}
