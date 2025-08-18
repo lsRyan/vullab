@@ -1,5 +1,6 @@
 #!bin/bash
 
+# Input variables
 ROOT_DIR=$1
 ANALYSIS_QNT=$2
 THREADS=$3
@@ -32,6 +33,8 @@ done
 echo -e "[+] Executing \e[32mSmartBugs\e[0m on baked dataset..."
 for dir in $(ls $ROOT_DIR/dataset/baked_dataset); do
 	echo -e "[i] Currently working on \e[32m$dir\e[0m"
+	
+	# Call SmartBugs with the required configurations
 	bash $ROOT_DIR/smartbugs/smartbugs -t all -f $ROOT_DIR/dataset/baked_dataset/$dir/exec/*.sol --results $ROOT_DIR'/results/${TOOL}/baked_dataset/'$dir'/${FILENAME}' --processes $THREADS --cpu-quota $CPUS --mem-limit 750m --timeout 900 --sarif
 done
 

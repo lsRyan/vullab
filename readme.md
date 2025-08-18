@@ -109,7 +109,7 @@ You can download a Virtual Machine (~20Gb) that already has VulLab and all its d
 [![Button]][VM_Link]
 
 [Button]: https://img.shields.io/badge/Download_VM-37a779?style=for-the-badge
-[VM_Link]: https://mega.nz/file/LIMUwKZb#8mkzGiv7sLjxYulptDtQSrTrn-HVImqAZut2A73eZlM
+[VM_Link]: https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy9iNTIzMTNhYmUwNDEzNWUwL0ViRXVaQUNNT2VoTm9wdmVLOHVtQWRnQlg5Ukt1VnNiSXJjLTVHS01OR1ROOUE%5FZT1vdUo1cDM&cid=B52313ABE04135E0&id=B52313ABE04135E0%21s00642eb1398c4de8a29bde2bcba601d8&parId=B52313ABE04135E0%21s62b3d90c0ae74b9cb25800075efe928c&o=OneUp
 
 For manually installing VUlLab we offer two alternatives: one requiring `miniconda`, a free environment managing tool, and another which only requires a system with `python`.
 

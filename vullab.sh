@@ -40,7 +40,7 @@ while [[ $# -gt 0 ]]; do
 	case "$1" in
 		-h|--help)
 		help=true
-		break
+		break # For safety, no other process will be executed in case the user asks for the help menu
 		;;
 
 		-c|--cpus)
@@ -56,7 +56,10 @@ while [[ $# -gt 0 ]]; do
 		-u|--huanggai)
 		tools+=("huanggai")
 
+		# Float number format
 		re='^[0-9]+(\.[0-9]+)?$'
+
+		# If the user set a custom timeout
 		if [[ $2 =~ $re ]] ; then
    			shift
    			huangGai_timeout=$1
@@ -70,7 +73,10 @@ while [[ $# -gt 0 ]]; do
 		-a|--analyze)
 		analyze=true
 
+		# Integer number format
 		re='^[0-9]+$'
+
+		# If the user set a custom number of contracts to be analyzed
 		if [[ $2 =~ $re ]] ; then
    			shift
    			smartbugs_analysis_qnt=$1
@@ -80,13 +86,19 @@ while [[ $# -gt 0 ]]; do
 		-g|--gpt)
 		gpt=true
 
+		# Integer number format
 		re='^[0-9]+$'
+
+		# If the user set a custom number of contracts to be analyzed
 		if [[ $2 =~ $re ]] ; then
    			shift
    			gpt_analysis_qnt=$1
 		fi
 
+		# Text format
 		re='^[^-]'
+		
+		# If the user configured a specific model
 		if [[ $2 =~ $re ]] ; then
    			shift
    			gpt_model=$1
@@ -111,6 +123,7 @@ while [[ $# -gt 0 ]]; do
 	shift
 done
 
+# Print cool intro
 echo -e "\e[32m
     Thank you for using VulLab, the smart contract vulnerability laboratory!
 
@@ -124,7 +137,9 @@ echo -e "\e[32m
 	/________\_/  \__,_|_\____/\__,_|_.__/ 
 \e[0m"
 
+# If the user requested the help menu
 if [ "$help" = "true" ]; then
+	# Print it
 	echo "
 	Usage: $(basename "$0") [--parallel NUMBER_OF_CORES] [--solidifi]
                             [--huanggai NUMBER_OF_CONTRACTS INSERTION_TIMEOUT]
@@ -180,21 +195,34 @@ if [ "$help" = "true" ]; then
 	exit 0
 fi
 
+# If Execution 
 if (( ${#tools[@]} )); then
 	bash $PWD/src/components/insertion.sh $PWD "${tools[*]}" $threads $cpus $huangGai_timeout
 fi
 
+# If the user selected Smartbugs for analysis
 if [ "$analyze" = "true" ]; then
+	# Call smartbugs script
 	bash $PWD/src/components/smartbugs.sh $PWD $smartbugs_analysis_qnt $threads $cpus
+	
+	# Requests the results be build after executing
 	build_results=true
 fi
 
+# If the user selected gpt for analysis
 if [ "$gpt" = "true" ]; then
+	# Call got script
 	bash $PWD/src/components/gpt.sh $PWD $gpt_analysis_qnt $gpt_model
+
+	# Requests the results be build after executing
 	build_results=true
 fi
 
+# If results should be build (either by a new analysis or by user)
 if [ "$build_results" = "true" ]; then
+	# Build a new CSV summary
 	python3 $PWD/src/utils/csv_report.py $PWD
+	
+	# COmpare detection reports with labels
 	python3 $PWD/src/utils/build_results.py $PWD $match_window
 fi

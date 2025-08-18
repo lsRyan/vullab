@@ -1,14 +1,17 @@
 #!/bin/bash
 
+# Input variables
 ROOT_DIR=$1
 ANALYSIS_QNT=$2
 MODEL=$3
 
+# Search for OpenAI API key on system variables
 if [[ ! -n "$OPENAI_API_KEY" ]]; then
  	echo -e "\e[31m[!] No chatGPT API key detected! Make sure you have a key saved as an environment variable! For more information please check the openAI API platform documentation.\e[0m"
 	exit 1
 fi
 
+# Search for selected models on OpenAI available models
 python3 $ROOT_DIR/src/utils/check_gpt_model.py $MODEL
 exit_status=$?
 if [ $exit_status -eq 1 ]; then
@@ -43,10 +46,15 @@ done
 echo -e "[+] Executing \e[32m$MODEL\e[0m on baked dataset..."
 for dir in $(ls $ROOT_DIR/dataset/baked_dataset); do
 	echo -e "[i] Currently working on \e[32m$dir\e[0m"
+	
+	# Get each contract from the dir
 	for contract in $(ls $ROOT_DIR/dataset/baked_dataset/$dir/exec); do
+		# Create temporary execution directories
 		if [ ! -d $ROOT_DIR/results/$MODEL/baked_dataset/$dir/$contract ]; then
 			mkdir -p $ROOT_DIR/results/$MODEL/baked_dataset/$dir/$contract
 		fi
+
+		# Get contract source code and feed it to gpt_api.py 
         code=$(cat $ROOT_DIR/dataset/baked_dataset/$dir/exec/$contract | sed -e 's|//.*|// comment|' -e '/\/\*/,/\*\//{/\/\*/!{/\*\//!s|.*|comment|}}')
 		echo "$code" | python3 $ROOT_DIR/src/utils/gpt_api.py $MODEL $ROOT_DIR/results/$MODEL/baked_dataset/$dir/$contract/result.sarif
 		wait

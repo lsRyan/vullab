@@ -202,10 +202,13 @@ def assert_sarif_format(sarif_report, sarif_schema):
         return False
 
 if __name__ == "__main__":
-    client = OpenAI()
+    # Input variables
     model = sys.argv[1]
     sarif_dir = sys.argv[2]
-    smart_contract_src = sys.stdin.read()
+    smart_contract_src = sys.stdin.read() # Read smart contract source code from stream
+
+    # OpenAI API client
+    client = OpenAI()
     
     # Get the sarif JSON schema
     sarif_schema = get_sarif_schema()
