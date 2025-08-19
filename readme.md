@@ -29,7 +29,7 @@ Each of the sections above corresponds to the following:
 - **Installation**: Step-by-step guide of how to install VulLab
 - **Usage**: Manual of how to use each of VulLab's functionalities
 - **Test and Experiments**: Step-by-step guide for the execution of tests
-- **Information for Artefact Analysis**: Required seals, objective claims and security concerns (which are none).
+- **Information for Artefact Analysis**: Required seals and objective claims
 - **Demo**: Video with an example of VulLab using the provided virtual machine
 - **License**: Project license
 
@@ -133,7 +133,7 @@ For manually installing all of the required packages we offer two alternatives: 
 
 <h3>Using Miniconda (recommended)</h3>
 
-This option requires `miniconda`, of which we recommend version 24.7.1, that can be obtained by following [miniconda's installation tutorial](https://www.anaconda.com/docs/getting-started/miniconda/install). Note that this installation may require a system reboot to take effect.
+This option requires `miniconda`, of which we recommend version 24.7.1. It can be obtained by following [miniconda's installation tutorial](https://www.anaconda.com/docs/getting-started/miniconda/install). **Note that this installation may require a system reboot to take effect**.
 
 Once `miniconda` is installed, import the provided environment by executing
 
@@ -194,13 +194,19 @@ We also undertook a larger study that included thousands of files, leading to in
 - We strongly recommend watch the [demo](#demo-in-portuguese) before executing, as it presents a step-by-step execution of the [reduced experiment](#reduced-experiment).
 
 <h3>Smoke test (Minimum test)</h3>
-To execute the smoke test copy all contents from the `dataset\raw_dataset_5` to the `dataset\raw_dataset` (you may need to manually delete the `.gitkeep` file in `dataset\raw_dataset`). For this test we recommend the usage of 8 cores (threads). With the command line open in the project's root directory execute
+To execute the smoke test copy all contents from the `dataset\raw_dataset_5` to the `dataset\raw_dataset` (you may need to manually delete the `.gitkeep` file in `dataset\raw_dataset`). With the command line open in the project's root directory execute:
 
 ```
-bash vullab.sh -t <threads> -s -u -a -g gpt-4o-mini
+bash vullab.sh --smoke-test
 ```
 
-If you do not have an OpenAI API key you can omit the `-g gpt-4o-mini` portion of the command.
+The command above will automatically configure VulLab to run the following command:
+
+```
+bash vullab.sh -t 8 -s -u -a -g gpt-4o-mini
+```
+
+Note that, if you are running this test manually (cmd above) and you do not have an OpenAI API key, you should omit the `-g gpt-4o-mini` portion of the command.
 
 After executing, the output should be as follows:
 
@@ -209,13 +215,20 @@ After executing, the output should be as follows:
 </p>
 
 <h3>Reduced Experiment</h3>
-To execute the reduced experiment copy all contents from `dataset\raw_dataset_50` to `dataset\raw_dataset` (you may need to manually delete the `.gitkeep` file in `dataset\raw_dataset`). For this test we recommend the usage of 8 cores (threads). With the command line open in the project's root directory execute:
+To execute the reduced experiment copy all contents from `dataset\raw_dataset_50` to `dataset\raw_dataset` (you may need to manually delete the `.gitkeep` file in `dataset\raw_dataset`). With the command line open in the project's root directory execute:
 
 ```
-bash vullab.sh -t <threads> -s -u 0.25 -a -g -m 3
+bash vullab.sh --reduced-experiment
 ```
 
-If you do not have an OpenAI API key you can omit the `-g` portion of the command.
+The command above will automatically configure VulLab to run the following command:
+
+```
+bash vullab.sh -t 8 -s -u 0.25 -a -g -m 3
+```
+
+Note that, if you are running this test manually (cmd above) and you do not have an OpenAI API key, you should omit the `-g` portion of the command.
+
 
 After executing, the output should be as follows:
 

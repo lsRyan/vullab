@@ -24,7 +24,7 @@ smartbugs_analysis_qnt=all
 #GPT
 gpt=false
 gpt_analysis_qnt=all
-gpt_model=gpt-4o-mini
+gpt_model=gpt-4.1-mini
 #Number of line more or less from labels 
 #to be considered a successful detection
 match_window="5"
@@ -41,6 +41,45 @@ while [[ $# -gt 0 ]]; do
 		-h|--help)
 		help=true
 		break # For safety, no other process will be executed in case the user asks for the help menu
+		;;
+
+		--smoke-test)
+		# Eight threads selected
+		threads=8
+
+		# Solidifi and Huanggai enabled
+		tools+=("solidifi")
+		tools+=("huanggai")
+
+		# Analysis enabled
+		analyze=true
+
+		# GPT analyzer enabled with gpt-4o-mini model
+		gpt=true
+		gpt_model=gpt-4o-mini
+
+		break # For safety, no other flags will be considered if the smoke test is selected
+		;;
+
+		--reduced-experiment)
+		# Eight threads selected
+		threads=8
+
+		# Solidifi and Huanggai enabled
+		tools+=("solidifi")
+		tools+=("huanggai")
+		huangGai_timeout=0.25 # Huanggai configured with a 15 seconds timeout
+
+		# Analysis enabled
+		analyze=true
+
+		# GPT analyzer enabled with default gpt-4.1-mini model
+		gpt=true
+
+		# Match window configured to 3 lines
+		match_window=3
+
+		break # For safety, no other flags will be considered if the reduced experiment is selected
 		;;
 
 		-c|--cpus)

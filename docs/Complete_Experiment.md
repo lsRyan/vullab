@@ -18,16 +18,14 @@ We then executed VulLab's analysis module, comprised of `SmartBugs2`' 14 tools w
 The command for executing SmartBugs was:
 
 ```
-bash vullab.sh -t <threads> -a 1000 -m 1
+bash vullab.sh -t 20 -a 1000 -m 1
 ```
 
 And the command for executing the gpt-analyzer was:
 
 ```
-bash vullab.sh -t <threads> -g 100 gpt-4o-mini -m 1
+bash vullab.sh -t 20 -g 100 gpt-4o-mini -m 1
 ```
-
-If trying to reproduce, we recommend using at least 20 cores (threads) for both.
 
 After executing, the output should be as follows:
 
