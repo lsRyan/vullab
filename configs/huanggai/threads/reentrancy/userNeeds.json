@@ -41,7 +41,7 @@
     ],
     "reentrancy": [
         1,
-        0.2
+        0.5
     ],
     "shortAddressAttack": [
         0,

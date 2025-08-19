@@ -193,6 +193,8 @@ We also undertook a larger study that included thousands of files, leading to in
 
 - We strongly recommend watch the [demo](#demo-in-portuguese) before executing, as it presents a step-by-step execution of the [reduced experiment](#reduced-experiment).
 
+For hardware requirements and execution time estates please refer to the [provided table](/docs/Tests_Requirements.md).
+
 <h3>Smoke test (Minimum test)</h3>
 To execute the smoke test copy all contents from the `dataset\raw_dataset_5` to the `dataset\raw_dataset` (you may need to manually delete the `.gitkeep` file in `dataset\raw_dataset`). With the command line open in the project's root directory execute:
 
