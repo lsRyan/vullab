@@ -223,6 +223,6 @@ if [ "$build_results" = "true" ]; then
 	# Build a new CSV summary
 	python3 $PWD/src/utils/csv_report.py $PWD
 	
-	# COmpare detection reports with labels
+	# Compare detection reports with labels
 	python3 $PWD/src/utils/build_results.py $PWD $match_window
 fi

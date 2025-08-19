@@ -6,6 +6,26 @@ ANALYSIS_QNT=$2
 THREADS=$3
 CPUS=$(( 100000 * $4 ))
 
+# If smartbugs directory does not exists
+if [ ! -d "$ROOT_DIR/smartbugs" ]; then
+	echo "[i] SmartBugs directory not found. Installing..."
+
+	# Install smartbugs and it's virtual environment
+	git clone https://github.com/smartbugs/smartbugs.git
+	cd smartbugs
+	bash install/setup-venv.sh
+	cd ..
+
+# If smartbugs directory is present but its virtual environment was not installed
+elif [ ! -d "$ROOT_DIR/smartbugs/venv" ]; then
+	echo "[i] It seems SmartBugs virtual env was not installed. Installing..."
+	
+	# Install smartbugs virtual environment
+	cd smartbugs
+	bash install/setup-venv.sh
+	cd ..
+fi
+
 # Filter contracts by line count
 echo "[+] Collecting dataset for analysis..."
 for dir in $(ls -d $ROOT_DIR/dataset/baked_dataset/*); do
