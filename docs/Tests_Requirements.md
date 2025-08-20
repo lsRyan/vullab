@@ -12,16 +12,16 @@ We also offer te same specifications and respective estimates in the case of our
 ### Smoke Test
 | Threads  | RAM (Gib)  | Disk Space (Gib) | Estimated Time (h) | Recommended |
 |:--------:|:----------:|:----------------:|:------------------:|:-----------:|
-| 4        | 4          | 40               | 0.5                |             |
-| 4        | 8          | 40               | 0.5                |             |
-| 8        | 8          | 40               | 0.25               | X           |
+| 4        | 4          | 40               | 6                  |             |
+| 4        | 8          | 40               | 6                  |             |
+| 8        | 8          | 40               | 3                  | X           |
 
 ### Reduced Experiment
 | Threads  | RAM (Gib)  | Disk Space (Gib) | Estimated Time (h) | Recommended |
 |:--------:|:----------:|:----------------:|:------------------:|:-----------:|
-| 4        | 8          | 40               | 48                 |             |
-| 8        | 8          | 40               | 24                 | X           |
-| 16       | 12         | 40               | 12                 |             |
+| 4        | 8          | 40               | 60                 |             |
+| 8        | 8          | 40               | 30                 | X           |
+| 16       | 12         | 40               | 15                 |             |
 
 ### Complete Experiment
 | Threads  | RAM (Gib)  | Disk Space (Gib) | Estimated Time (h) | Recommended |
