@@ -117,6 +117,20 @@ For more information on `SmartBugs` installation please refer to its [installati
 VulLab requires several `pip` libraries to work, which are listed into [vullab_env.yml](vullab_env.yml) or [requirements.txt](requirements.txt). For a complete dependencies overview you can also refer to the [dependencies table](docs/Dependencies_Table.md).
 
 
+<h3>OpenAI API key</h3>
+
+For adding you OPenAI API key as a system variable just open your terminal configuration file under `/home` (e.g. .bashrc, .zshrc) and add the following line:
+ 
+```
+export OPENAI_API_KEY='<your OpenAI key>'
+```
+Finally, open your terminal and type
+
+```
+source <terminal configuration file name>
+```
+
+
 ## Installation
 First, clone VulLab in the directory you wish it to be located
 
