@@ -62,7 +62,9 @@ To test VulLab in a custom build environment with all required dependencies and 
 [Button]: https://img.shields.io/badge/Download_VM-37a779?style=for-the-badge
 [VM_Link]: https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy9iNTIzMTNhYmUwNDEzNWUwL0ViRXVaQUNNT2VoTm9wdmVLOHVtQWRnQlg5Ukt1VnNiSXJjLTVHS01OR1ROOUE%5FZT1vdUo1cDM&cid=B52313ABE04135E0&id=B52313ABE04135E0%21s00642eb1398c4de8a29bde2bcba601d8&parId=B52313ABE04135E0%21s62b3d90c0ae74b9cb25800075efe928c&o=OneUp
 
+To use the provided VM we recommend using VirtualBox version 7.1.6, which can be obtained [here](https://www.virtualbox.org/wiki/Downloads).
 
+First, unzip SBSeg2025.zip in the directory you wish. Then, open VirtualBox and click `File -> Import Appliance`. Select the SBSeg2025.ova file you just unzipped with the default configurations. Once the machine is imported selected it and click `Settings` and make sure that the `Graphic Controller`, under `System -> Display` is set to `VMSVGA`. Finally, just click `Start` to boot!
 
 ## Dependencies
 VulLab was made for Linux systems and was not tested in Windows or MacOS. Its main dependencies are presented in this section.

@@ -12,14 +12,18 @@ execute=True
 if [[ ! -n "$OPENAI_API_KEY" ]]; then
  	echo -e "\e[31m[!] No chatGPT API key detected! Make sure you have a key saved as an environment variable! For more information please check the openAI API platform documentation. The GPT Analyzer will NOT be executed.\e[0m"
 	execute=False
-fi
 
-# Search for selected models on OpenAI available models
-python3 $ROOT_DIR/src/utils/check_gpt_model.py $MODEL
-exit_status=$?
-if [ $exit_status -eq 1 ]; then
- 	echo -e "\e[31m[!] The model $MODEL you selected is not available! Please refer to the openAI API documentation for available models. The GPT Analyzer will NOT be executed.\e[0m"
-	execute=False
+# If the OpenAI API key is present
+else
+	# Search for selected models on OpenAI available models
+	python3 $ROOT_DIR/src/utils/check_gpt_model.py $MODEL
+	exit_status=$?
+	
+	# If the selected model was not found
+	if [ $exit_status -eq 1 ]; then
+ 		echo -e "\e[31m[!] The model $MODEL you selected is not available! Please refer to the openAI API documentation for available models. The GPT Analyzer will NOT be executed.\e[0m"
+		execute=False
+	fi
 fi
 
 # If the API key is present and the model exists
