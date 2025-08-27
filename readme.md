@@ -60,7 +60,7 @@ To test VulLab in a custom build environment with all required dependencies and 
 [![Button]][VM_Link]
 
 [Button]: https://img.shields.io/badge/Download_VM-37a779?style=for-the-badge
-[VM_Link]: https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy9iNTIzMTNhYmUwNDEzNWUwL0VlMjJkd2h6UHY5RGt3LTJ3ZmtxRkgwQlBJZVMtNWNkOVh1MThTNDFzYTZiR3c&cid=B52313ABE04135E0&id=B52313ABE04135E0%21s0877b6ed3e7343ff930fb6c1f92a147d&parId=B52313ABE04135E0%21s89b0b3e58a7241bb8968012f7ce6f61a&o=OneUp
+[VM_Link]: [https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL3UvYy9iNTIzMTNhYmUwNDEzNWUwL0VlMjJkd2h6UHY5RGt3LTJ3ZmtxRkgwQlBJZVMtNWNkOVh1MThTNDFzYTZiR3c&cid=B52313ABE04135E0&id=B52313ABE04135E0%21s0877b6ed3e7343ff930fb6c1f92a147d&parId=B52313ABE04135E0%21s89b0b3e58a7241bb8968012f7ce6f61a&o=OneUp](https://1drv.ms/f/c/b52313abe04135e0/EuWzsIlyirtBiWgBL3zm9hoBa3Yavnrfy4c16Q3G-19cnQ?e=h7LWLd)
 
 To use the provided VM we recommend using VirtualBox version 7.1.6, which can be obtained [here](https://www.virtualbox.org/wiki/Downloads).
 
